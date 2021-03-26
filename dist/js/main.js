@@ -97,13 +97,13 @@ const displayHomeLocationWeather = (home) => {
 };
 
 const saveLocation = () => {
-  if (currentLoc.getLat() && currentLoc.getLat()) {
+  if (currentLoc.getLat() && currentLoc.getLon()) {
     const saveIcon = document.querySelector(".fa-save");
     addSpinner(saveIcon);
     const location = {
       name: currentLoc.getName(),
-      lat: currentLoc.getLon(),
       lat: currentLoc.getLat(),
+      lon: currentLoc.getLon(),
       unit: currentLoc.getUnit(),
     };
     localStorage.setItem("defaultWeatherLocation", JSON.stringify(location));
